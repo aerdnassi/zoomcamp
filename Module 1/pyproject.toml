@@ -20,3 +20,8 @@ dev = [
     "jupyter>=1.1.1",
     "pgcli>=4.4.0",
 ]
+
+[tool.uv.workspace]
+members = [
+    "sql",
+]

@@ -39,12 +39,12 @@ parse_dates = [
 @click.option('--pg-port', default=5432, type=int, help='PostgreSQL port')
 @click.option('--pg-db', default='ny_taxi', help='PostgreSQL database name')
 @click.option('--target-table', default='yellow_taxi_data', help='Target table name')
+@click.option('--chunk-size', default=100000, type=int, help='Number of rows per chunk to ingest')
 
-def run(pg_user, pg_pass, pg_host, pg_port, pg_db, target_table):
+def run(pg_user, pg_pass, pg_host, pg_port, pg_db, target_table, chunk_size):
 
     year = 2021
     month = "01"
-    chunk_size = 100000
     
     prefix = 'https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/'
 
